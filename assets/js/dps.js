@@ -24,6 +24,7 @@ function Pesawat() {
 	var speed = 2;
 	var bombs = [];
 	var img = loadImage('assets/img/plane.png');
+	
 	this.draw = function() {
 		// fill(255);
 		// rect(pos[0], pos[1], 100, 25);
@@ -42,10 +43,9 @@ function Pesawat() {
 			if (bombs[i].getPos()[1] >= height) {
 				bombs.splice(i, 1);
 			}
-
-			
 		}
 	}
+
 	this.eject = function() {
 		bombs.push(new Bomb(pos[0]+48, pos[1]+48, speed));
 	}
@@ -61,6 +61,7 @@ function Bomb(x, y, v0) {
 	var img = loadImage('assets/img/bomb.png');
 	var explode = loadImage('assets/img/explode.png');
 	var sound = loadSound('assets/sound/explode.mp3');
+
 	this.getPos = function() {
 		return pos;
 	}
