@@ -9,14 +9,8 @@ function setup() {
 function draw() {
 	background(0);
 	pesawat.draw();
-	fill('#8B4513');
+	fill('#66330e');
 	rect(0, height-25, width, height);
-}
-
-function keyPressed() {
-	if (keyCode == ENTER) {
-		pesawat.eject();
-	}
 }
 
 function Pesawat() {
@@ -24,7 +18,7 @@ function Pesawat() {
 	var speed = 2;
 	var bombs = [];
 	var img = loadImage('assets/img/plane.png');
-	
+
 	this.draw = function() {
 		// fill(255);
 		// rect(pos[0], pos[1], 100, 25);
@@ -67,8 +61,6 @@ function Bomb(x, y, v0) {
 	}
 
 	this.draw = function() {
-		//fill('#ff0000');
-		//circle(pos[0], pos[1], 15);
 		if (pos[1] >= height-50) {
 			image(explode, pos[0]-50, height-100);
 			if (!sound.isPlaying()) {
@@ -92,3 +84,6 @@ function Bomb(x, y, v0) {
 	}
 }
 
+function ejectBomb() {
+	pesawat.eject();
+}
