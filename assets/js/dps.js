@@ -13,6 +13,12 @@ function draw() {
 	rect(0, height-25, width, height);
 }
 
+function keyPressed() {
+	if (keyCode == ENTER) {
+		pesawat.eject();
+	}
+}
+
 function Pesawat() {
 	var pos = [0, 20];
 	var speed = 2;
@@ -82,8 +88,4 @@ function Bomb(x, y, v0) {
 	this.getKecepatanY = function(v0, theta, g, t) {
 		return v0 * sin(theta) - g * t;
 	}
-}
-
-function ejectBomb() {
-	pesawat.eject();
 }
